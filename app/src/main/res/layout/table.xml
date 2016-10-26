@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.graphics.Color" />
+
+        <variable
+            name="table"
+            type="com.quandoo.sodaoud.app.viewmodel.TableViewModel" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="6dp"
+        android:clickable="true"
+        android:onClick="@{table.onClick}"
+        card_view:cardBackgroundColor="@{table.table.available ? Color.GREEN : Color.RED}">
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="6dp"
+            android:text="@{table.numberString}"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large.Inverse"
+            android:textColor="@android:color/white" />
+
+    </android.support.v7.widget.CardView>
+</layout>
